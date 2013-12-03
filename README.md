@@ -11,4 +11,4 @@ Creat an array of circles
 Create a catcher that is in the shape of a basket
 Make the catcher follow the mouse 
 Make the catcher catch the raindrop if it falls right on top of it
-for each raindrop caught, the score should raise by one
+for each raindrop caught, the score should increase by one

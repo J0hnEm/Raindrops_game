@@ -1,8 +1,10 @@
 Raindrops[] raindrop;
+Catcher catcher;
 
 void setup(){
   size(500,500);
-  raindrop = new Raindrops[1000];
+  catcher = new Catcher();
+  raindrop = new Raindrops[13];
   for (int i = 0; i < raindrop.length; i++){
     raindrop[i] = new Raindrops();
   }
@@ -13,4 +15,7 @@ void draw(){
     raindrop[i].display();
     raindrop[i].drop();
   }
+  catcher.display();
 }
+
+void 

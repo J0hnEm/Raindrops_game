@@ -1,21 +1,35 @@
 Raindrops[] raindrop;
 Catcher catcher;
+Score score;
+Timer timer;
+int index;
+int currentTime, oldTime;
 
-void setup(){
-  size(500,500);
-  catcher = new Catcher();
-  raindrop = new Raindrops[13];
-  for (int i = 0; i < raindrop.length; i++){
+void setup() {
+  size(500, 500);
+  raindrop = new Raindrops[100000];
+  for (int i = 0; i < raindrop.length; i++) {
     raindrop[i] = new Raindrops();
   }
+  catcher = new Catcher();
+  score = new Score();
+  timer = new Timer();
+  rectMode(CENTER);
 }
-void draw(){
-  background(9,27,33);
-  for(int i = 0; i < raindrop.length; i++){
+void draw() {
+  if(startscreen
+  currentTime=millis();
+  background(9, 27, 33);
+  catcher.display();
+  score.display();
+  timer.display();
+  for (int i = 0; i < timer.index; i++) {
     raindrop[i].display();
     raindrop[i].drop();
+    score.increase(catcher, raindrop[i]);
   }
-  catcher.display();
+  catcher.big(score);
+  if(timer.limit = 0){
+    
 }
 
-void 

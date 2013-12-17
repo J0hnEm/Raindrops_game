@@ -1,8 +1,12 @@
 class GameOver {
-  PVector loc;
+  PVector loc, rloc;
+  int w,h;
 
   GameOver() {
     loc = new PVector(width/2, height*1/4);
+    rloc = new PVector(width/2, height*5/8);
+    w=50;
+    h=50;
   }
 
   void display(Score score) {
@@ -31,9 +35,7 @@ class GameOver {
     textSize(50);
     textAlign(CENTER);
     text("Play Again?", width/2, height*3/4);
-    if (mousePressed) {
-      sc.display();
+    rect(rloc.x, rloc.y, w,h); 
     }
-  }
 }
 

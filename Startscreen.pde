@@ -1,10 +1,10 @@
 class Startscreen {
   PVector loc;
-  int w, h;
+  int w,h;
 
   Startscreen() {
-    w = 50;
-    h = 50;
+    w= 50;
+    h=50;
     loc = new PVector(width/2-w/2, height/2-h/2);
   }
 
@@ -13,7 +13,7 @@ class Startscreen {
     textSize(50);
     textAlign(CENTER);
     text("Raindrops Game", width/2, height *1/4);
-    rect(loc.x, loc.y, w, h);
+    rect(loc.x, loc.y, w,h);
   }
 }
 

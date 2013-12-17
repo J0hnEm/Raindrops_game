@@ -1,50 +1,15 @@
-<<<<<<< HEAD
-Raindrops[] raindrop;
-Catcher catcher;
-Score score;
-Timer timer;
-int index;
-=======
 Raindrops[] r;
 Catcher c;
 Score score;
 Timer t;
 GameOver go;
 Startscreen sc;
-boolean a, b, d;
->>>>>>> 61f7df74d47a2559f387002d38ad654433055d17
+int index;
+boolean a, b,d;
 int currentTime, oldTime;
 
 void setup() {
   size(500, 500);
-<<<<<<< HEAD
-  raindrop = new Raindrops[100000];
-  for (int i = 0; i < raindrop.length; i++) {
-    raindrop[i] = new Raindrops();
-  }
-  catcher = new Catcher();
-  score = new Score();
-  timer = new Timer();
-  rectMode(CENTER);
-}
-void draw() {
-  if(startscreen
-  currentTime=millis();
-  background(9, 27, 33);
-  catcher.display();
-  score.display();
-  timer.display();
-  for (int i = 0; i < timer.index; i++) {
-    raindrop[i].display();
-    raindrop[i].drop();
-    score.increase(catcher, raindrop[i]);
-  }
-  catcher.big(score);
-  if(timer.limit = 0){
-    
-}
-
-=======
   r = new Raindrops[100000];
   for (int i = 0; i < r.length; i++) {
     r[i] = new Raindrops();
@@ -54,13 +19,16 @@ void draw() {
   t = new Timer();
   go = new GameOver();
   sc = new Startscreen();
+  a=true;
+  b=false;
+  d=false;
 }
 
 void draw() {
-  /*if (b) {
+  if(a=true){
    sc.display();
-   }*/
-  if (a) {
+  }
+  if (b=true) {
     background(9, 27, 33);
     c.display();
     score.display();
@@ -72,21 +40,23 @@ void draw() {
     }
     c.big(score);
   }
-  if (!d) {
+  if (d=true) {
     go.display(score);
     go.restart(sc);
   }
-  if (t.limit == 0) {
-    a=!a;
-    d=!d;
-    
-  }
+  if(t.limit == 0){
+    d = true;
+
 }
 
-/*void mousePressed(Startscreen sc) {
- if (mouseX > sc.loc.x && mouseX < sc.loc.x + sc.w && mouseY > sc.loc.y && mouseY < sc.loc.y + sc.h) {
- b = !b;
- a = !a;
- }
- }*/
->>>>>>> 61f7df74d47a2559f387002d38ad654433055d17
+void mousePressed(Startscreen sc, GameOver go) {
+  if (mouseX > sc.loc.x && mouseX < sc.loc.x + sc.w && mouseY > sc.loc.y && mouseY < sc.loc.y + sc.h) {
+      a=false;
+      b=true;
+  }
+  if(mouseX > go.rloc.x && mouseX < go.rloc.x + go.w && mouseY > go.rloc.y && mouseY < go.loc.y + go.h) {
+    d=false;
+    a=true;
+}
+}
+

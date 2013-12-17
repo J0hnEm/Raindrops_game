@@ -10,11 +10,11 @@ class Score {
     text("Score:" + s, width/2, height*1/4);
   }
 
-  void increase(Catcher catcher, Raindrops raindrop) {
-    if (catcher.loc.dist(raindrop.loc) < catcher.w + raindrop.d/2) {
-      raindrop.loc.set(-width, -height);
-      raindrop.vel.set(0, 0);
-      raindrop.acc.set(0, 0);
+  void increase(Catcher c, Raindrops r) {
+    if (c.loc.dist(r.loc) < c.w) {
+      r.loc.set(-width, -height);
+      r.vel.set(0, 0);
+      r.acc.set(0, 0);
       s++;
     }
   }
